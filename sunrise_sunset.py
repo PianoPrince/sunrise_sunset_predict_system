@@ -149,9 +149,9 @@ with st.sidebar:
         input_date = st.date_input("观测日期", datetime.now())
         st.divider()
         
-        input_sunrise = ui_time_input_precise("日出时间", 6, 30, 0, "rise")
+        input_sunrise = ui_time_input_precise("日出时间", 6, 38, 40, "rise")
         st.divider()
-        input_sunset = ui_time_input_precise("日落时间", 18, 30, 0, "set")
+        input_sunset = ui_time_input_precise("日落时间", 16, 52, 42, "set")
         st.divider()
             
         utc_offset = st.number_input("所在时区 (UTC偏移)", min_value=-12.0, max_value=14.0, value=8.0, step=0.5)
@@ -360,4 +360,5 @@ if st.session_state.has_calculated:
                 st.download_button("下载 CSV 数据表", csv, "solar_data.csv", "text/csv")
 
 else:
+
     st.info("👈 请在左侧侧边栏输入观测数据并点击“计算经纬度”")
